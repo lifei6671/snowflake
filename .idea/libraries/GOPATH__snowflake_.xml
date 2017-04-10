@@ -1,0 +1,53 @@
+<component name="libraryTable">
+  <library name="GOPATH &lt;snowflake&gt;">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/../../../algorithms" />
+      <root url="file://$PROJECT_DIR$/../../../documents" />
+      <root url="file://$PROJECT_DIR$/../../../goblog" />
+      <root url="file://$PROJECT_DIR$/../../../godeploy" />
+      <root url="file://$PROJECT_DIR$/../../../gocaptcha" />
+      <root url="file://$PROJECT_DIR$/../../../go-io" />
+      <root url="file://$PROJECT_DIR$/../../../DaoCloudStaticBlog" />
+      <root url="file://$PROJECT_DIR$/../../../gosession" />
+      <root url="file://$PROJECT_DIR$/../../../web" />
+      <root url="file://$PROJECT_DIR$/../../../smartconf" />
+      <root url="file://$PROJECT_DIR$/../../../fluentcaptcha" />
+      <root url="file://$PROJECT_DIR$/../../../daocloud-nginx-server" />
+      <root url="file://$PROJECT_DIR$/../../../cache" />
+      <root url="file://$PROJECT_DIR$/../.." />
+      <root url="file://$PROJECT_DIR$/../../../golang.org" />
+      <root url="file://$PROJECT_DIR$/../../../goproxy" />
+      <root url="file://$PROJECT_DIR$/../../../GoDemo" />
+      <root url="file://$PROJECT_DIR$/../../../async" />
+      <root url="file://$PROJECT_DIR$/../../../DaoCloud" />
+      <root url="file://$PROJECT_DIR$/../../../sourcegraph.com" />
+      <root url="file://$PROJECT_DIR$/../../../GoWebAccess" />
+    </CLASSES>
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/../../../algorithms" />
+      <root url="file://$PROJECT_DIR$/../../../documents" />
+      <root url="file://$PROJECT_DIR$/../../../goblog" />
+      <root url="file://$PROJECT_DIR$/../../../godeploy" />
+      <root url="file://$PROJECT_DIR$/../../../gocaptcha" />
+      <root url="file://$PROJECT_DIR$/../../../go-io" />
+      <root url="file://$PROJECT_DIR$/../../../DaoCloudStaticBlog" />
+      <root url="file://$PROJECT_DIR$/../../../gosession" />
+      <root url="file://$PROJECT_DIR$/../../../web" />
+      <root url="file://$PROJECT_DIR$/../../../smartconf" />
+      <root url="file://$PROJECT_DIR$/../../../fluentcaptcha" />
+      <root url="file://$PROJECT_DIR$/../../../daocloud-nginx-server" />
+      <root url="file://$PROJECT_DIR$/../../../cache" />
+      <root url="file://$PROJECT_DIR$/../.." />
+      <root url="file://$PROJECT_DIR$/../../../golang.org" />
+      <root url="file://$PROJECT_DIR$/../../../goproxy" />
+      <root url="file://$PROJECT_DIR$/../../../GoDemo" />
+      <root url="file://$PROJECT_DIR$/../../../async" />
+      <root url="file://$PROJECT_DIR$/../../../DaoCloud" />
+      <root url="file://$PROJECT_DIR$/../../../sourcegraph.com" />
+      <root url="file://$PROJECT_DIR$/../../../GoWebAccess" />
+    </SOURCES>
+    <excluded>
+      <root url="file://$PROJECT_DIR$" />
+    </excluded>
+  </library>
+</component>
