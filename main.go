@@ -2,23 +2,43 @@ package main
 
 import (
 	"fmt"
-	"github.com/lifei6671/snowflake/snowflake"
 	"flag"
 	"time"
-	"github.com/lifei6671/snowflake/ring"
+	"github.com/lifei6671/snowflake/server"
+	"strings"
+	"strconv"
 )
 
 func main() {
 	var port int
-	var workerId int64
+	var workerIdBits int
 	var timeDate string
-	var sequence int64
+	var sequenceBits int
+	var timestampBits int
+	var size int
+	var worker string
+
+
 
 	flag.IntVar(&port,"port",8181,"Snowflake Server listen port.")
-	flag.Int64Var(&workerId,"worker",23,"Snowflake Server ID.")
+	flag.IntVar(&workerIdBits,"workerSize",10,"WorkerBits number.")
+	flag.StringVar(&worker,"worker","1","Worder id list.Please use , split.")
 	flag.StringVar(&timeDate,"time","2017-04-10","Snowflake start time.")
-	flag.Int64Var(&sequence,"sequence",0,"Snowflake sequence number.")
+	flag.IntVar(&sequenceBits,"sequenceSize",12,"SequenceBits sequence number.")
+	flag.IntVar(&timestampBits,"timestampSize",41,"TimestampBits number.")
+	flag.IntVar(&size,"size",1000,"Buffer Size.")
+
 	flag.Parse()
+
+	ws := strings.Split(worker,",")
+
+	workers := make([]int64,len(ws))
+
+	for index, ws := range ws {
+		if r,err := strconv.ParseInt(ws,10,64);err == nil {
+			workers[index] = r
+		}
+	}
 
 	t,err := time.Parse("",timeDate)
 	if err != nil {
@@ -27,31 +47,12 @@ func main() {
 
 	epochSeconds := t.Unix()
 
-	allocator ,_ := snowflake.NewBitsAllocator(31,23,9)
+	s,err := server.NewServer(port,size,workers,timestampBits,sequenceBits,workerIdBits,epochSeconds)
 
-	snow,_ := snowflake.NewSnowflake(10,allocator)
-
-	snow.SetEpochSeconds(epochSeconds)
-
-	fmt.Println(snow.NextId())
-
-	r,_ := ring.NewRingBuffer(100,1)
-
-	go func() {
-
-	}()
-
-	for i:= 10; i<= 1000;i ++ {
-		r.Put(int64(i))
+	if err != nil {
+		fmt.Println(err)
+	}else{
+		s.Run()
 	}
 
-	for i:= 10; i<= 1000;i ++ {
-		v,err := r.Take();
-		if err != nil{
-			fmt.Println(err)
-		}
-		fmt.Println(v)
-	}
-
-	fmt.Printf("%+v %v",r,  10 & 50)
 }

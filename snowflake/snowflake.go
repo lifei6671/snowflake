@@ -5,7 +5,6 @@ import (
 	"time"
 	"errors"
 	"strconv"
-	"fmt"
 )
 
 
@@ -75,7 +74,6 @@ func (p *Snowflake) NextId() (int64,error) {
 	}
 	p.lastTimestamp = currentSecond
 
-	fmt.Println(currentSecond ,"|", p.epochSeconds,"|",p.workerId,"|",p.sequence)
 	return p.allocator.Allocate(currentSecond - p.epochSeconds, p.workerId, p.sequence),nil;
 }
 
@@ -93,4 +91,8 @@ func (p *Snowflake) getNextSecond() (int64,error) {
 	}
 
 	return timestamp,nil;
+}
+
+func (p *Snowflake) WorkerId() int64  {
+	return p.workerId
 }
